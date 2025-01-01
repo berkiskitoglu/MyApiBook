@@ -1,0 +1,30 @@
+﻿@model MyApiBook.WebUI.Dtos.UpdateAuthorDto
+
+@{
+    ViewData["Title"] = "UpdateWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yazar Güncelleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <input type="hidden" asp-for="AuthorID" />
+        <br />
+        <label>Yazar Adı</label>
+        <input type="text" asp-for="AuthorName" class="form-control" />
+        <br />
+        <label>Yazar Soyadı</label>
+        <input type="text" asp-for="AuthorSurname" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Yazar Güncelle</button>
+    </div>
+</form>
+
+
+

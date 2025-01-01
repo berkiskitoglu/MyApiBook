@@ -1,0 +1,27 @@
+﻿@model MyApiBook.WebUI.Dtos.CreateQuotationDto
+
+@{
+    ViewData["Title"] = "CreateQuotation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Günün Sözünü Ekleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <br />
+        <label>Yazar</label>
+        <input type="text" asp-for="AuthorID" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Günün Sözünü Ekle</button>
+    </div>
+</form>
+

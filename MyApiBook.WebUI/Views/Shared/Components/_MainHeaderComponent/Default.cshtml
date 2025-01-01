@@ -1,0 +1,20 @@
+﻿<header id="header">
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-md-2">
+				<div class="main-logo">
+					<a href="index.html"><img src="~/booksaw-1.0.0/images/main-logo.png" alt="logo"></a>
+				</div>
+
+			</div>
+
+			<div class="col-md-10">
+
+				@await Component.InvokeAsync("_NavbarComponent")
+
+			</div>
+
+		</div>
+	</div>
+</header>

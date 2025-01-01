@@ -1,0 +1,22 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultCategoryWithBookAndAuthor>
+
+@foreach (var item in Model.Where(x=>x.CurrentPrice > 0).OrderByDescending(x=>x.BookID).Take(3))
+{
+	<div class="product-item">
+		<figure class="product-style">
+			<img src="@item.ImageUrl" alt="Books" class="product-item" style="width: 100%; height: 500px;">
+			<button type="button" class="add-to-cart" data-product-tile="add-to-cart">
+				Sepete Ekle
+			</button>
+		</figure>
+		<figcaption>
+			<h3>@item.Name</h3>
+			<span>@item.AuthorName @item.AuthorSurname</span>
+			<div class="item-price">
+				<span class="prev-price">$@item.OrginalPrice</span>$@item.CurrentPrice
+			</div>
+		</figcaption>
+	</div>
+}
+
+

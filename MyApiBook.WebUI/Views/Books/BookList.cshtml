@@ -1,0 +1,97 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultProductDto>
+
+@{
+    ViewData["Title"] = "BookList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Kitap Paneli</h3>
+</div>
+
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+         
+                <th>Kitap Ad</th>       
+                <th>Resim</th>
+                <th>Yayınlanma Tarihi</th>
+                <th>Fiyat</th>
+                <th>Kitap Sil</th>
+                <th>Kitap Güncelle</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                 
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.Name</span>
+                            </div>
+                        </div>
+                    </th>
+
+                 
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <img src="@item.ImageUrl" alt="Kitap Resmi" style="width: 100px; height: auto;" />
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.CreatedDate.ToString("dd/MMM/yyyy")</span>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">$@item.OrginalPrice.ToString("F0")</span>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Books/DeleteBook/@item.BookID" class="btn btn-outline-danger">Sil</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Books/UpdateBook/@item.BookID" class="btn btn-outline-warning">Güncelle</a>
+                            </div>
+                        </div>
+                    </th>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/Books/CreateBook/" class="btn btn-outline-success" style="margin:10px">Yeni Kitap Girişi</a>
+</div>
+
+
+

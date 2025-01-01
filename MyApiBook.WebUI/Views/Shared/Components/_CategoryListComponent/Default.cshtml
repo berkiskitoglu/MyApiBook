@@ -1,0 +1,10 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultCategoryDto>
+
+<ul class="tabs">
+	@foreach (var item in Model)
+	{
+		<li data-tab-target="#@item.CategoryName" class="active tab">@item.CategoryName</li>
+
+	}
+	
+</ul>

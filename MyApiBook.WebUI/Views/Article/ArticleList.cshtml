@@ -1,0 +1,85 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultArticleDto>
+
+@{
+    ViewData["Title"] = "ArticleList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Makale Paneli</h3>
+</div>
+
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th>Yazar</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>Açıklama</th>
+                <th>Makale Sil</th>
+                <th>Makale Güncelle</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.AuthorID</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.CreatedDate.ToString("dd/MMM/yyyy")</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.Description.Substring(0,30)...</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Article/DeleteArticle/@item.ArticleID" class="btn btn-outline-danger">Sil</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Article/UpdateArticle/@item.ArticleID" class="btn btn-outline-warning">Güncelle</a>
+                            </div>
+                        </div>
+                    </th>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/Article/CreateArticle" class="btn btn-outline-success" style="margin:10px">Yeni Makale Girişi</a>
+</div>
+
+
+

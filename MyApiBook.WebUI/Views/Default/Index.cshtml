@@ -1,0 +1,236 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_MainHeadComponent")
+
+<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+
+	<div id="header-wrap">
+
+		<div class="top-content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						@await Component.InvokeAsync("_SocialMediaComponent")
+					</div>
+					<div class="col-md-6">
+						@await Component.InvokeAsync("_TopRightHeaderComponent")
+					</div>
+
+				</div>
+			</div>
+		</div><!--top-content-->
+		@await Component.InvokeAsync("_MainHeaderComponent")
+
+
+	</div><!--header-wrap-->
+
+	<section id="billboard">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<button class="prev slick-arrow">
+						<i class="icon icon-arrow-left"></i>
+					</button>
+
+					@await Component.InvokeAsync("_SliderComponent")
+
+
+					<button class="next slick-arrow">
+						<i class="icon icon-arrow-right"></i>
+					</button>
+
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<section id="client-holder" data-aos="fade-up">
+		<div class="container">
+			<div class="row">
+				@await Component.InvokeAsync("_LogoComponent")
+
+			</div>
+		</div>
+	</section>
+
+	<section id="featured-books" class="py-5 my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+
+					@await Component.InvokeAsync("_SliderComponent")
+
+
+
+				</div><!--inner-content-->
+			</div>
+
+			
+		</div>
+	</section>
+
+	<section id="best-selling" class="leaf-pattern-overlay">
+		<div class="corner-pattern-overlay"></div>
+		<div class="container">
+			<div class="row justify-content-center">
+
+				<div class="col-md-8">
+
+					<div class="row">
+
+ 						@await Component.InvokeAsync("_BestSellingBookComponent")
+	
+
+					
+					</div>
+					
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="popular-books" class="bookshelf py-5 my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="section-header align-center">
+						<div class="title">
+							<span>Bazı kaliteli ürünler</span>
+						</div>
+						<h2 class="section-title">Popüler Kitaplar</h2>
+					</div>
+
+
+					@await Component.InvokeAsync("_CategoryListComponent")
+
+					<div class="tab-content">
+						<div id="Karışık" data-tab-content class="active">
+
+							@await Component.InvokeAsync("_AllGenresBookListComponent")
+
+						</div>
+
+						@await Component.InvokeAsync("_BusinessBookListComponent")
+					 	@await Component.InvokeAsync("_TechnologyBookListComponent")
+						@await Component.InvokeAsync("_RomanticBookListComponent")
+						@await Component.InvokeAsync("_AdventureBookListComponent")
+						@await Component.InvokeAsync("_FictionalBookListComponent") 
+
+						
+
+						
+
+						
+
+						
+
+					</div>
+
+				</div><!--inner-tabs-->
+
+			</div>
+		</div>
+	</section>
+
+	@await Component.InvokeAsync("_QuotationComponent")
+
+
+	<section id="special-offer" class="bookshelf pb-5 mb-5">
+
+		<div class="section-header align-center">
+			<div class="title">
+				<span>Fırsatı Kaçırma</span>
+			</div>
+			<h2 class="section-title">İndirimdeki Kitaplar</h2>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="inner-content">
+					<div class="product-list" data-aos="fade-up">
+						<div class="grid product-grid">
+							@await Component.InvokeAsync("_OfferBooksListComponent")
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="subscribe">
+		<div class="container">
+			<div class="row justify-content-center">
+
+				<div class="col-md-8">
+					<div class="row">
+
+						@await Component.InvokeAsync("_SubscribeComponent")
+
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="latest-blog" class="py-5 my-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="section-header align-center">
+						<div class="title">
+							<span>Yazılarımızı Oku</span>
+						</div>
+						<h2 class="section-title">Son Yazılar</h2>
+					</div>
+
+					<div class="row">
+
+						@await Component.InvokeAsync("_LatestArticleListComponent")
+
+
+					</div>
+
+					<div class="row">
+
+						<div class="btn-wrap align-center">
+							<a href="#" class="btn btn-outline-accent btn-accent-arrow" tabindex="0">
+								Tüm Yazıları Oku<i class="icon icon-ns-arrow-right"></i>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	@await Component.InvokeAsync("_FooterComponent")
+
+	@await Component.InvokeAsync("_DefaultJavaScriptsComponent")
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+﻿@model MyApiBook.WebUI.Dtos.CreateSocialMediaDto
+
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">SosyalMedya Ekleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <br />
+        <label>Sosyal Medya İsmi</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>Url</label>
+        <input type="text" asp-for="Url" class="form-control" />
+        <br />
+        <label>İkon</label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+        <label>Sosyal Medya Durum</label>
+        <input type="text" asp-for="Status" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Sosyal Medya Ekle</button>
+    </div>
+</form>
+
+

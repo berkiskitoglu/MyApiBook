@@ -1,0 +1,87 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultSocialMediaDto>
+
+@{
+    ViewData["Title"] = "SocialMediaList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Sosyal Medya Paneli</h3>
+</div>
+
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Sosyal Medya</th>
+                <th>İkon</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.SocialMediaID</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.Name</span>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.Icon</span>
+                            </div>
+                        </div>
+                    </th>
+
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/SocialMedias/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-outline-danger">Sil</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/SocialMedias/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-outline-warning">Güncelle</a>
+                            </div>
+                        </div>
+                    </th>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/SocialMedias/CreateSocialMedia" class="btn btn-outline-success" style="margin:10px">Yeni Sosyal Medya Girişi</a>
+</div>
+
+
+

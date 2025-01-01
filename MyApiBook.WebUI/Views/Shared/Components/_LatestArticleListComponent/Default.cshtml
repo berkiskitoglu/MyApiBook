@@ -1,0 +1,26 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ArticleWithAuthorAndBookDto>
+@foreach (var item in Model.OrderByDescending(x=>x.ArticleID).TakeLast(3))
+{
+	<div class="col-md-4">
+
+		<article class="column" data-aos="fade-up">
+
+			<figure>
+				<a href="#" class="image-hvr-effect">
+					<img src="@item.ImageUrl[0]" alt="post" class="post-image">
+				</a>
+			</figure>
+
+			<div class="post-item">
+				<div class="meta-date">@item.CreatedDate.ToString("MMM dd"), @item.CreatedDate.ToString("yyyy")</div>
+				<h3><a href="#">@item.Description</a></h3>
+
+				
+
+			</div>
+		</article>
+
+	</div>
+}
+
+

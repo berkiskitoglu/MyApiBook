@@ -1,0 +1,27 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultProductDto>
+<div class="main-slider pattern-overlay">
+	<div class="slider-item">
+		
+			<div class="banner-content">
+			
+				<h2 class="banner-title">@Model[13].Name</h2>
+				<p>
+					@Model[13].Description
+				</p>
+				<div class="btn-wrap">
+					<a href="#" class="btn btn-outline-accent btn-accent-arrow">
+						Daha Fazlası..<i class="icon icon-ns-arrow-right"></i>
+					</a>
+				</div>
+			
+			
+		</div>
+			<!--banner-content-->
+			<img src="@Model[13].ImageUrl" alt="banner" class="banner-image" width="450">
+	
+		
+	</div>
+
+
+
+</div>

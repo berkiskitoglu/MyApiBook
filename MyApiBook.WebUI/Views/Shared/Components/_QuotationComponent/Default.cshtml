@@ -1,0 +1,17 @@
+﻿@model List<MyApiBook.WebUI.Dtos.QuotationWithAuthorDto>
+
+<section id="quotation" class="align-center pb-5 mb-5">
+	<div class="inner-content">
+		@foreach (var item in Model.TakeLast(1))
+		{
+			<h2 class="section-title divider">Günün Sözü</h2>
+			<blockquote data-aos="fade-up">
+				<q>
+					“@item.Description”
+				</q>
+				<div class="author-name">@item.AuthorName @item.AuthorSurname</div>
+			</blockquote>
+		}
+		
+	</div>
+</section> 

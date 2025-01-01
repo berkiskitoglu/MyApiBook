@@ -1,0 +1,25 @@
+﻿@model MyApiBook.WebUI.Dtos.CreateCategoryDto
+
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Kategori Ekleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <br />
+        <label>Kategori Adı</label>
+        <input type="text" asp-for="CategoryName" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Kategori Ekle</button>
+    </div>
+</form>
+
+

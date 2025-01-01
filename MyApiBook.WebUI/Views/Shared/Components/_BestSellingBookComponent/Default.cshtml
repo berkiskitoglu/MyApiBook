@@ -1,0 +1,30 @@
+﻿@model List<MyApiBook.WebUI.Dtos.BookWithAuthorListDto>
+<div class="col-md-6">
+    <figure class="products-thumb">
+        <img src="@Model[8].ImageUrl" alt="book" class="single-image">
+    </figure>
+</div>
+
+<div class="col-md-6">
+
+    <div class="product-entry">
+        <h2 class="section-title divider">En Çok Satan Kitap</h2>
+
+        <div class="products-content">
+            <div class="author-name">@Model[8].AuthorName </div>
+            <h3 class="item-title">@Model[8].Name</h3>
+            <p>
+
+            </p>
+            <div class="item-price">$@Model[8].OrginalPrice </div>
+            <div class="btn-wrap">
+                <a href="#" class="btn-accent-arrow">
+                    Şimdi Alışveriş Yap <i class="icon icon-ns-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,29 @@
+﻿@model MyApiBook.WebUI.Dtos.CreateAuthorDto
+
+@{
+    ViewData["Title"] = "CreateWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yazar Ekleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <br />
+        <label>Yazar Adı</label>
+        <input type="text" asp-for="AuthorName" class="form-control" />
+        <br />
+        <label>Yazar Adı</label>
+        <input type="text" asp-for="AuthorSurname" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Yazar Ekle</button>
+    </div>
+</form>
+
+

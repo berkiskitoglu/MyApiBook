@@ -1,0 +1,43 @@
+﻿@model MyApiBook.WebUI.Dtos.CreateBookDto
+
+@{
+    ViewData["Title"] = "CreateBook";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Kitap Ekleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <br />
+        <label>Yazar</label>
+        <input type="text" asp-for="AuthorID" class="form-control" />
+        <br />
+        <label>Kategori</label>
+        <input type="text" asp-for="CategoryID" class="form-control" />
+        <br />
+        <label>Kitap Adı</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>Yayınlanma Tarihi</label>
+        <input type="text" asp-for="CreatedDate" class="form-control" />
+        <br />
+        <label>Fiyat</label>
+        <input type="text" asp-for="OrginalPrice" class="form-control" />
+        <br />
+        <label>Görsel</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Kitap Ekle</button>
+    </div>
+</form>
+

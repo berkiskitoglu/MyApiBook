@@ -1,0 +1,75 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultQuotationDto>
+
+@{
+    ViewData["Title"] = "QuotationList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Günün Sözleri Paneli</h3>
+</div>
+
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>            
+                <th>YazarID</th>
+                <th>Açıklama</th>
+                <th>Kategori Sil</th>
+                <th>Kategori Güncelle</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                   
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.AuthorID</span>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.Description.Substring(0,20)</span>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Quotations/DeleteQuotation/@item.QuatationID" class="btn btn-outline-danger">Sil</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Quotations/UpdateQuotation/@item.QuatationID" class="btn btn-outline-warning">Güncelle</a>
+                            </div>
+                        </div>
+                    </th>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/Quotations/CreateQuotation/" class="btn btn-outline-success" style="margin:10px">Yeni Günün Sözü Ekle</a>
+</div>
+
+
+

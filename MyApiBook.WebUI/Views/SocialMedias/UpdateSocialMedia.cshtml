@@ -1,0 +1,35 @@
+﻿@model MyApiBook.WebUI.Dtos.UpdateSocialMediaDto
+
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">SosyalMedya Güncelleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <input type="hidden" asp-for="SocialMediaID" />
+        <br />
+        <label>Sosyal Medya Adı</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>Url</label>
+        <input type="text" asp-for="Url" class="form-control" />
+        <br />
+        <label>İkon</label>
+        <input type="text" asp-for="Icon" class="form-control" />
+        <br />
+        <label>Durum</label>
+        <input type="text" asp-for="Status" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Sosyal Medya Güncelle</button>
+    </div>
+</form>
+
+
+

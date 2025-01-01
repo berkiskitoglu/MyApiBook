@@ -1,0 +1,30 @@
+﻿@model MyApiBook.WebUI.Dtos.UpdateQuotationDto
+
+@{
+    ViewData["Title"] = "UpdateQuotation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Günün Sözü Güncelleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <input type="hidden" asp-for="QuatationID" />
+        <br />
+        <label>Yazar</label>
+        <input type="text" asp-for="AuthorID" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Günün Sözünü Güncelle</button>
+    </div>
+</form>
+
+
+

@@ -1,0 +1,45 @@
+﻿@model MyApiBook.WebUI.Dtos.UpdateBookDto
+
+@{
+    ViewData["Title"] = "UpdateBook";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Kitap Güncelleme Paneli</h3>
+</div>
+
+
+<form method="post">
+    <div class="container">
+        <input type="hidden" asp-for="BookID" />
+        <br />
+        <label>Kitap</label>
+        <input type="text" asp-for="CategoryID" class="form-control" />
+        <br />
+        <label>Yazar</label>
+        <input type="text" asp-for="AuthorID" class="form-control" />
+        <br />
+        <label>Kitap Ad</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>Fiyat</label>
+        <input type="text" asp-for="OrginalPrice" class="form-control" />
+        <br />
+        <label>Yayınlanma Tarihi</label>
+        <input type="text" asp-for="CreatedDate" class="form-control" />
+        <br />
+        <label>Görsel</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+        <label>Açıklama</label>
+        <input type="text" asp-for="Description" class="form-control" />
+        <br />
+        <button class="btn btn-outline-primary" style="margin:10px">Kitap Güncelle</button>
+    </div>
+</form>
+
+
+

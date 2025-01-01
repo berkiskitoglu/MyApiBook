@@ -1,0 +1,85 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultWriterDto>
+
+@{
+    ViewData["Title"] = "WriterList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yazar Paneli</h3>
+</div>
+
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Yazar Ad</th>
+                <th>Yazar Soyad</th>
+                <th>Kategori Sil</th>
+                <th>Kategori Güncelle</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.AuthorID</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.AuthorName</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">@item.AuthorSurname</span>
+                            </div>
+                        </div>
+                    </th>
+
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Writers/DeleteWriter/@item.AuthorID" class="btn btn-outline-danger">Sil</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="row">
+                        <div class="media align-items-center">
+
+                            <div class="media-body">
+                                <a href="/Writers/UpdateWriter/@item.AuthorID" class="btn btn-outline-warning">Güncelle</a>
+                            </div>
+                        </div>
+                    </th>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+    <a href="/Writers/CreateWriter/" class="btn btn-outline-success" style="margin:10px">Yeni Yazar Girişi</a>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+﻿@model List<MyApiBook.WebUI.Dtos.ResultSocialMediaDto>
+
+<div class="social-links">
+	<ul>
+		@foreach (var item in Model)
+		{
+			<li>
+				<a href="@item.Url"><i class="@item.Icon"></i></a>
+				
+			</li>
+
+		}
+		
+	</ul>
+</div>
